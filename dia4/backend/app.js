@@ -37,8 +37,10 @@ app.get('/notas/:id', (req, res) => {
 
 app.post('/notas', (req, res) => {
   const { nombre, valor } = req.body;
-  notas = [...notas, { nombre, valor }];
-  res.json({ nombre, valor, id: notas.length - 1});
+  if(nombre && valor){
+    notas = [{ nombre, valor }, ...notas, ];
+  }
+  res.json({ nombre, valor });
 })
 
 app.listen(PORT, function(){
