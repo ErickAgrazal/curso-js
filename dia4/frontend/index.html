@@ -10,6 +10,14 @@
 
 <body>
   <h1>Materia: Programación</h1>
+  <form id="formulario" action="">
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" type="text">
+    <label for="valor">Valor:</label>
+    <input id="valor" type="text">
+    <button type="submit">Calcular</button>
+  </form>
+  <hr>
   <table>
     <thead>
       <tr>
@@ -17,11 +25,7 @@
         <th>Calificación</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>Parcial #1</td>
-        <td>100</td>
-      </tr>
+    <tbody id="notas">
     </tbody>
   </table>
   <script src="app.js"></script>
