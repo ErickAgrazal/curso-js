@@ -32,9 +32,15 @@ app.get('/notas', (req, res) => {
 
 app.get('/notas/:id', (req, res) => {
   const { id } = req.params;
-  res.json(notas[id]);
+  res.json(notas[id] ? notas[id] : {});
 });
+
+app.post('/notas', (req, res) => {
+  const { nombre, valor } = req.body;
+  notas = [...notas, { nombre, valor }];
+  res.json({ nombre, valor, id: notas.length - 1});
+})
 
 app.listen(PORT, function(){
   console.log(`Ejecutando en el puerto: 3000`);
-})
+});
