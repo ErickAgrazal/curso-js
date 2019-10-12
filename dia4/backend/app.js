@@ -45,11 +45,17 @@ app.post('/notas', (req, res) => {
 
 app.delete('/notas/:id', (req, res) => {
   const { id } = req.params;
-  console.log('id: ', id);
-  console.log(notas);
   notas.splice(id, 1);
-  console.log(notas);
   res.json({});
+});
+
+app.put('/notas/:id', (req, res) => {
+  const { id } = req.params;
+  const { nombre, valor } = req.body;
+  if(notas[id] && nombre && valor){
+    notas[id] = { nombre, valor };
+  }
+  res.json(nombre && valor ? { nombre, valor } : { } ); 
 });
 
 app.listen(PORT, function(){
