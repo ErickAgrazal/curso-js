@@ -31,7 +31,8 @@ app.get('/notas', (req, res) => {
 });
 
 app.get('/notas/:id', (req, res) => {
-
+  const { id } = req.params;
+  res.json(notas[id]);
 });
 
 app.listen(PORT, function(){
