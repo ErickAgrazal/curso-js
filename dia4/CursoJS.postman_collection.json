@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d065d7f8-3c2d-493f-a57b-d919a63f9abd",
+		"_postman_id": "b24f4e13-b4bc-4385-a78f-c9f8d727492c",
 		"name": "CursoJS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -8,6 +8,45 @@
 		{
 			"name": "dia4",
 			"item": [
+				{
+					"name": "Leer notas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/notas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"notas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Leer una nota",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/notas/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"notas",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "Crear nota",
 					"request": {
@@ -30,14 +69,71 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/notas",
+							"raw": "http://localhost:3000/notas/0",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"notas"
+								"notas",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar nota",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/notas/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"notas",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar nota",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nombre\": \"Parcial #3\",\n\t\"valor\": 25\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/notas/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"notas",
+								"0"
 							]
 						}
 					},
