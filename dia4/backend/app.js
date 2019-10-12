@@ -38,10 +38,19 @@ app.get('/notas/:id', (req, res) => {
 app.post('/notas', (req, res) => {
   const { nombre, valor } = req.body;
   if(nombre && valor){
-    notas = [{ nombre, valor }, ...notas, ];
+    notas = [...notas, { nombre, valor }];
   }
   res.json({ nombre, valor });
-})
+});
+
+app.delete('/notas/:id', (req, res) => {
+  const { id } = req.params;
+  console.log('id: ', id);
+  console.log(notas);
+  notas.splice(id, 1);
+  console.log(notas);
+  res.json({});
+});
 
 app.listen(PORT, function(){
   console.log(`Ejecutando en el puerto: 3000`);
